@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <title>ABC</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method = "POST" action="/user">
+    	<input type="hidden" name="_method" value="PUT" />
+    	<p>
+    		Name <input type="text" name="name"/>
+    	</p>
+    	<p>
+    		Email <input type="email" name="name"/>
+    	</p>
+    	<p>
+    		Age <input type="number" name="name"/>
+    	</p>
+    	<p>
+    		<input type="submit"/>
+    	</p>
+    </form>
+    <br><br>
+    <div class="container" ng-controller="AppCtrl">
+    	<h1> Contact List App </h1>
+        {{info}}
+    	<table class="table">
+    		<thead>
+    			<tr>
+    				<th>Name</th>
+    				<th>Email</th>
+    				<th>Number</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr ng-repeat="contact in contactlist">
+    				<td>{{contact.name}}</td>
+    				<td>{{contact.email}}</td>
+    				<td>{{contact.number}}</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+     <script src="controllers/controller.js"></script>
+  </body>
+</html>
